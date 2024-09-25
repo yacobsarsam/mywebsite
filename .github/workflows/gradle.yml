@@ -15,7 +15,7 @@ on:
     branches: [ "main" ]
 
 env:
-  build-number: ${{GITHUB_RUN_NUMBER}}
+  build-number: ${{ github.run_number }}
 
 permissions: write-all
 
