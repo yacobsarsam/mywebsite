@@ -40,7 +40,7 @@ jobs:
 
       - name: Build
         run: gradle build
-      - run: mv MyWebsite-0.0.1-SNAPSHOT-plain.jar MyWebsite-1.${{ env.build-number }}.1.jar
+      - run: mv build/libs/MyWebsite-0.0.1-SNAPSHOT-plain.jar build/libs/MyWebsite-1.${{ env.build-number }}.1.jar
       - run: mkdir staging && cp MyWebsite-1.${{ env.build-number }}.1.jar staging/MyWebsiteRelease-1.${{ env.build-number }}.1.jar
 
       - uses: "marvinpinto/action-automatic-releases@latest"
