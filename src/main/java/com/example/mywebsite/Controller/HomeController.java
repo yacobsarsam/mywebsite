@@ -79,25 +79,6 @@ public class HomeController {
     String MittCv() { return "mittcv";}
 
 
-    /*
-    @GetMapping (path="minkod")
-    String MinaProjekt (Model model)
-    {
-        List<ProjectDto> allProjectsDto = projectService.getAllProjectsDto();
-        for(int i =0; i < allProjectsDto.size(); i++){
-            System.out.println("MINA "+allProjectsDto.get(i).getDescription());
-        }
-        model.addAttribute("prList", allProjectsDto);
-
-
-        //List<Project> projects = projectRepo.findAll();
-        //String s = HashFileSearch.GetPass(kod);
-        //model.addAttribute("ph", s);
-        return "kod";
-    }
-
-    */
-
     @GetMapping(path="error")
     public String handleError(){
         return "error";
