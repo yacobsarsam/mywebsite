@@ -9,9 +9,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "postgres" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "postgres" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
