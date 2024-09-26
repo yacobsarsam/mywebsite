@@ -5,51 +5,38 @@
 # This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
 
-name: Java CI with Gradle
+name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
-
+    branches: [ "postgres" ]
   pull_request:
-    branches: [ "main" ]
-
-env:
-  build-number: ${{ github.run_number }}
-
-permissions: write-all
+    branches: [ "postgres" ]
+  workflow_dispatch:
 
 jobs:
+
   build:
 
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+        name: Check out code
 
-      - name: Set up JDK 20
-        uses: actions/setup-java@v4
+      - uses: mr-smithers-excellent/docker-build-push@v6
+        name: Build & push Docker image
         with:
-          java-version: '20'
-          distribution: 'corretto'
+          image: yacoubsarsam/vgtest20240926
+          tags: latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
+      - name: Deploy to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          gradle-version: '8.7'
-
-      - name: Build
-        run: gradle build
-      - run: mv build/libs/MyWebsite-0.0.1-SNAPSHOT-plain.jar build/libs/MyWebsite-1.${{ env.build-number }}.1.jar
-      - run: mkdir staging && cp build/libs/MyWebsite-1.${{ env.build-number }}.1.jar staging/MyWebsite-1.${{ env.build-number }}.1.jar
-
-      - uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: false
-          title: "Version ${{ env.build-number }}"
-          files: |
-            staging/*.jar
-
-
+            service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
+            api-key: ${{ secrets.MY_RENDER_API_KEY }}
+            wait-for-success: false
