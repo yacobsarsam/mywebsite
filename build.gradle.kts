@@ -4,6 +4,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.4"
 }
 
+
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
 
@@ -45,8 +46,6 @@ dependencies {
 	testImplementation ("com.h2database:h2")
 
 }
-
-
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
