@@ -25,7 +25,6 @@ public class HomeController {
    public HomeController(ProjectService projectService) {
        this.projectService = projectService;
    }
-
     @GetMapping("/")
     public String home() {
         return "index";
