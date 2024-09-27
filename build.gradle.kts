@@ -50,5 +50,5 @@ tasks.withType<Test> {
 }
 
 tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
-	mainClass.set("com.example.mywebsite.MyWebsiteApplication")  // Define the main class
+	mainClass.set("com.example.mywebsite.mywebsiteapplication")  // Define the main class
 }
