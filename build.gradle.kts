@@ -1,14 +1,8 @@
-import groovy.xml.dom.DOMCategory.attributes
-import sun.tools.jar.resources.jar
-
 plugins {
 	java
 	id("org.springframework.boot") version "3.2.4"
 	id("io.spring.dependency-management") version "1.1.4"
 }
-
-
-
 
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
@@ -54,8 +48,6 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
-
-
 
 tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
 	mainClass.set("com.example.mywebsite.MyWebsiteApplication")  // Define the main class
