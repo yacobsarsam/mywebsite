@@ -2,9 +2,7 @@ FROM gradle:jdk20
 
 COPY ./ ./
 
-
 RUN gradle build
-
 
 RUN mv ./build/libs/MyWebsite-0.0.1-SNAPSHOT-plain.jar /app.jar
 
