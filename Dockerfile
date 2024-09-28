@@ -1,4 +1,4 @@
-FROM gradle:jdk20
+FROM gradle:jdk20 as builder
 
 COPY ./ ./
 
