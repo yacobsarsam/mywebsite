@@ -61,6 +61,6 @@ application {
 	// Set the main class for the application
 	mainClass.set("com.example.mywebsite.MyWebsiteApplication")
 }
-/*application {
+application {
 	mainClass = "com.example.mywebsite.MyWebsiteApplication"
-}*/
+}
