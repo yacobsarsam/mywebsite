@@ -1,9 +1,9 @@
 
-
 plugins {
 	java
 	id("org.springframework.boot") version "3.2.4"
 	id("io.spring.dependency-management") version "1.1.4"
+	application
 }
 
 group = "com.example"
@@ -57,3 +57,10 @@ springBoot {
 	mainClass = "com.example.mywebsite.MyWebsiteApplication"  // Specify the main class
 	//layout = "JAR"  // Package as JAR file (this is the default)
 }
+application {
+	// Set the main class for the application
+	mainClass.set("com.example.mywebsite.MyWebsiteApplication")
+}
+/*application {
+	mainClass = "com.example.mywebsite.MyWebsiteApplication"
+}*/
