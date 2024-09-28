@@ -42,7 +42,6 @@ public class HomeController {
         ClassPathResource pdfFile = new ClassPathResource("static/CV-YacoubSarsam.pdf");
 
         byte[] pdfBytes = pdfFile.getInputStream().readAllBytes();
-
         // Set headers for the PDF
         HttpHeaders headers = new HttpHeaders();
         headers.add(HttpHeaders.CONTENT_TYPE, "application/pdf");
