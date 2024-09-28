@@ -53,14 +53,18 @@ tasks.withType<Test> {
 tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
 	mainClass.set("com.example.mywebsite.MyWebsiteApplication")  // Define the main class
 }
-springBoot {
-	mainClass = "com.example.mywebsite.MyWebsiteApplication"  // Specify the main class
+//springBoot {
+//	mainClass = "com.example.mywebsite.MyWebsiteApplication"  // Specify the main class
 	//layout = "JAR"  // Package as JAR file (this is the default)
-}
+//}
 application {
 	// Set the main class for the application
 	mainClass.set("com.example.mywebsite.MyWebsiteApplication")
 }
-application {
-	mainClass = "com.example.mywebsite.MyWebsiteApplication"
+tasks.jar {
+	manifest {
+		attributes(
+			"Main-Class" to "com.example.mywebsite.MyWebsiteApplication"  // Replace with your main class
+		)
+	}
 }
