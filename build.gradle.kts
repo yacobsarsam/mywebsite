@@ -14,7 +14,7 @@ version = "0.0.1-SNAPSHOT"
 //}
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(20)
+		languageVersion = JavaLanguageVersion.of(21)
 	}
 }
 
@@ -64,7 +64,7 @@ tasks.withType<Test> {
 tasks.jar {
 	manifest {
 		attributes(
-			"Main-Class" to "MyWebsiteApplication"  // Replace with your main class
+			"Main-Class" to "com.example.mywebsite.MyWebsiteApplication"  // Replace with your main class
 		)
 	}
 }
