@@ -55,7 +55,7 @@ public class HomeControllerTests {
     public void shouldReturnHomePage_whenGetRequestToRootUrl() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/"))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.view().name("index"));
+                .andExpect(MockMvcResultMatchers.view().name("iiiindex"));
     }
     /*@Test
     public void shouldReturnHomePage_whenGetRequestToRoot() throws Exception {
