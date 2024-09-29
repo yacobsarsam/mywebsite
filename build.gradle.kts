@@ -50,9 +50,9 @@ tasks.withType<Test> {
 	useJUnitPlatform()
 }
 
-tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
-	mainClass.set("com.example.mywebsite.MyWebsiteApplication")  // Define the main class
-}
+//tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
+//	mainClass.set("com.example.mywebsite.MyWebsiteApplication")  // Define the main class
+//}
 //springBoot {
 //	mainClass = "com.example.mywebsite.MyWebsiteApplication"  // Specify the main class
 	//layout = "JAR"  // Package as JAR file (this is the default)
