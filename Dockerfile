@@ -2,9 +2,9 @@ FROM gradle:jdk21 as builder
 
 COPY ./ ./
 
-RUN gradle bootJar
+RUN gradle build
 
-RUN mv ./build/libs/MyWebsite-0.0.1-SNAPSHOT-plain.jar /app.jar
+RUN mv ./build/libs/MyWebsite-0.0.1-SNAPSHOT.jar /app.jar
 
 FROM amazoncorretto:21-alpine
 
