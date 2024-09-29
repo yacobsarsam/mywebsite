@@ -2,7 +2,7 @@ FROM gradle:jdk21 as builder
 
 COPY ./ ./
 
-RUN gradle build
+RUN gradle bootJar
 
 RUN mv ./build/libs/MyWebsite-0.0.1-SNAPSHOT-plain.jar /app.jar
 
