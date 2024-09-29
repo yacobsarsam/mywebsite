@@ -64,7 +64,7 @@ tasks.withType<Test> {
 tasks.jar {
 	manifest {
 		attributes(
-			"Main-Class" to "com/example/mywebsite/MyWebsiteApplication.java"  // Replace with your main class
+			"Main-Class" to "MyWebsiteApplication.java"  // Replace with your main class
 		)
 	}
 }
