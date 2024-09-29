@@ -15,19 +15,13 @@ public class ProjectController {
 
     ProjectsDataSeeder projectsDataSeeder = new ProjectsDataSeeder();
 
-    @GetMapping(path="minkod")
-    String MinaProjekt (Model model) throws MalformedURLException {
+    @GetMapping(path = "minkod")
+    String MinaProjekt(Model model) throws MalformedURLException {
         List<Project> allProjects = projectsDataSeeder.GetProjectsAsList();
-        for(int i =0; i < allProjects.size(); i++){
-            System.out.println("MINA "+allProjects.get(i).getDescription());
+        for (Project allProject : allProjects) {
+            System.out.println("MINA " + allProject.getDescription());
         }
         model.addAttribute("prList", allProjects);
-
-
-        //List<Project> projects = projectRepo.findAll();
-        //String s = HashFileSearch.GetPass(kod);
-        //model.addAttribute("ph", s);
         return "kod";
     }
-
 }

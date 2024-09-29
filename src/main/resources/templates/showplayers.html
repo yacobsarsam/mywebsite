@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+>
 
 
-      <!--xmlns:sec="http://www.w3.org/1999/xhtml"-->
+<!--xmlns:sec="http://www.w3.org/1999/xhtml"-->
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+          rel="stylesheet">
     <style>
         .login-form {
             display: flex;
@@ -68,6 +69,7 @@
         .divider {
             margin: 20px 0;
         }
+
         .errorMmessage {
             color: red;
             text-align: center;
@@ -85,7 +87,7 @@
         <hr class="divider">
 
 
-        <div  class="links">
+        <div class="links">
             <a th:href="@{/cv}">CV</a>
             <a th:href="@{/minkod}">Projekt och kod</a>
             <a th:href="@{/players}">Players</a>
@@ -97,12 +99,13 @@
     <div class="all_customers" th:if="${#lists.isEmpty(playerlist)}">
         <p>Det finns inga spelare att visa för närvarande</p>
     </div>
-    <div class="all_customers room-container" th:unless="${#lists.isEmpty(playerlist)}" th:each="player : ${playerlist}">
+    <div class="all_customers room-container" th:each="player : ${playerlist}"
+         th:unless="${#lists.isEmpty(playerlist)}">
         <div class="room-inner-container">
             <div class="text-container">
                 <p th:text="'Player Id: ' + ${player.getId()}"></p>
-                <p th:text="'Player name: ' +${player.getName()}"  ></p>
-                <p th:text="'Player old: ' +${player.getOld()}"  ></p>
+                <p th:text="'Player name: ' +${player.getName()}"></p>
+                <p th:text="'Player old: ' +${player.getOld()}"></p>
             </div>
 
         </div>

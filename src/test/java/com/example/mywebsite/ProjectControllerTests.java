@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -35,43 +34,22 @@ public class ProjectControllerTests {
     @MockBean
     private ProjectsDataSeeder projectsDataSeeder;
 
-    //@MockBean
-    //private ProjectRepo projectRepo;
-
     @InjectMocks
     private ProjectController projectController;
 
-    /*@MockBean
-    private CommandLineRunner commandLineRunner;
-   // private ErrorMvcAutoConfiguration.PreserveErrorControllerTargetClassPostProcessor preserveErrorControllerTargetClassPostProcessor;
-*/
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
         mockMvc = MockMvcBuilders.standaloneSetup(projectController).build();
     }
 
-
-
-
-    /*@Test
-    public void shouldReturnMinKodPage_whenGetRequestKod() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/minkod"))
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.view().name("kod"));
-    }
-
-*/
     @Test
     public void testMinaprojekt() throws Exception {
-        // Arrange: Mock the ProjectService response
         List<Project> allProjects = Arrays.asList(
-                new Project(1,"Project 1", new URL("https://yacobsarsam.github.io/Store/html/index.html"),"Description 1"),
-                new Project(2, "Project 2",new URL("https://yacobsarsam.github.io/Store/html/index.html"), "Description 2")
+                new Project(1, "Project 1", new URL("https://yacobsarsam.github.io/Store/html/index.html"), "Description 1"),
+                new Project(2, "Project 2", new URL("https://yacobsarsam.github.io/Store/html/index.html"), "Description 2")
         );
         when(projectsDataSeeder.GetProjectsAsList()).thenReturn(allProjects);
-
-        // Act & Assert: Perform a GET request to "/minkod" and verify the result
 
         mockMvc.perform(MockMvcRequestBuilders.get("/minkod"))
                 .andExpect(status().isOk())
@@ -84,12 +62,5 @@ public class ProjectControllerTests {
                                 hasProperty("name", is("Project 1")),
                                 hasProperty("description", is("Description 1"))
                         ))));
-/*
-                        mockMvc.perform(get("/minkod"))
-                .andExpect(status().isOk()) // Expect a 200 OK status
-                .andExpect(view().name("kod")) // Expect the view name to be "kod"
-                .andExpect(model().attributeExists("prList")) // Ensure the model contains "prList"
-                .andExpect(model().attribute("prList", allProjects)); // Ensure "prList" contains the mocked projects
-    */
     }
 }
