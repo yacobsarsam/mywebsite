@@ -64,7 +64,7 @@ tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
 tasks.jar {
 	manifest {
 		attributes(
-			"Main-Class" to "com.example.mywebsite.MyWebsiteApplication"  // Replace with your main class
+			"Main-Class" to "MyWebsiteApplication"  // Replace with your main class
 		)
 	}
 }
