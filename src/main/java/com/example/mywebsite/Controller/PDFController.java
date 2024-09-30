@@ -18,14 +18,9 @@ public class PDFController {
     @GetMapping("/view-pdf")
     public ResponseEntity<InputStreamResource> downloadPdf() {
         try {
-            // Försök att läsa PDF-filen från static-mappen
             ClassPathResource pdfFile = new ClassPathResource("static/CV-YacoubSarsam.pdf");
-
-            // Sätt upp headers för nedladdning
             HttpHeaders headers = new HttpHeaders();
             headers.add("Content-Disposition", "attachment; filename=CV-YacoubSarsam.pdf");
-
-            // Returnera PDF-filen som en nedladdning
             return ResponseEntity.ok()
                     .headers(headers)
                     .contentType(MediaType.APPLICATION_PDF)

@@ -10,21 +10,18 @@ import java.util.List;
 
 
 @Controller
-//@RequiredArgsConstructor
 public class PlayerController {
     private final PlayerService playerService;
-   // private final ProjectImp projectImp;
-  // @Autowired
-   public PlayerController(PlayerService playerService) {
-       this.playerService = playerService;
-   }
 
-    @GetMapping (path="players")
-    String MinaProjekt (Model model)
-    {
+    public PlayerController(PlayerService playerService) {
+        this.playerService = playerService;
+    }
+
+    @GetMapping(path = "players")
+    String MinaProjekt(Model model) {
         List<PlayerDto> allPlayersDto = playerService.getAllPlayersDto();
-        for(int i =0; i < allPlayersDto.size(); i++){
-            System.out.println("MINA "+allPlayersDto.get(i).getName());
+        for (PlayerDto playerDto : allPlayersDto) {
+            System.out.println("MINA " + playerDto.getName());
         }
         model.addAttribute("playerlist", allPlayersDto);
 

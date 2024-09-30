@@ -22,6 +22,6 @@ public class Player {
 
     public Player(String name, String old) {
         this.name = name;
-        this.old=old;
+        this.old = old;
     }
 }

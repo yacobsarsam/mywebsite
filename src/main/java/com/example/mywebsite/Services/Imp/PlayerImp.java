@@ -1,7 +1,5 @@
 package com.example.mywebsite.Services.Imp;
 
-
-
 import com.example.mywebsite.Dtos.PlayerDto;
 import com.example.mywebsite.Models.Player;
 import com.example.mywebsite.Repositories.PlayerRepo;
@@ -26,18 +24,17 @@ public class PlayerImp implements PlayerService {
 
     @Override
     public void AddDataToDBIfNotSaved(List<Player> players) {
-List<Player> playersInDatabase = playerRepo.findAll();
-        for(Player p: players ){
-            Player pToCheck = playersInDatabase.stream().filter(c-> Objects.equals(c.getName(),p.getName())).findFirst().orElse(null);
-            if(pToCheck == null){
-            playerRepo.save(p);
+        List<Player> playersInDatabase = playerRepo.findAll();
+        for (Player p : players) {
+            Player pToCheck = playersInDatabase.stream().filter(c -> Objects.equals(c.getName(), p.getName())).findFirst().orElse(null);
+            if (pToCheck == null) {
+                playerRepo.save(p);
             }
         }
-         //   pr.saveAll(projects);
     }
 
     @Override
     public List<PlayerDto> getAllPlayersDto() {
-        return playerRepo.findAll().stream().map(p -> PlayerToPlayerDto(p)).toList();
+        return playerRepo.findAll().stream().map(this::PlayerToPlayerDto).toList();
     }
 }

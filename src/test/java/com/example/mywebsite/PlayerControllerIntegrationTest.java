@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@TestPropertySource(locations = "classpath:application.properties") // Använd H2 för tester
+@TestPropertySource(locations = "classpath:application.properties")
 public class PlayerControllerIntegrationTest {
 
     @Autowired
@@ -33,12 +33,10 @@ public class PlayerControllerIntegrationTest {
     @Test
     public void shouldReturnShowplayers_whenGetRequestPlayers() throws Exception {
         // Lägg till testdata om det behövs
-        Player player1 = new Player(1, "Player 1","24");
+        Player player1 = new Player(1, "Player 1", "24");
         Player player2 = new Player(2, "Player 2", "28");
-        playerImp.AddDataToDBIfNotSaved(List.of(player1,player2));
+        playerImp.AddDataToDBIfNotSaved(List.of(player1, player2));
 
-
-        // Skicka GET-förfrågan till /minkod och kontrollera svaren
         mockMvc.perform(MockMvcRequestBuilders.get("/players"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("showplayers"))
@@ -50,12 +48,6 @@ public class PlayerControllerIntegrationTest {
                                 hasProperty("name", is("Player 1")),
                                 hasProperty("old", is("24"))
                         )
-
-    /*.andExpect(model().attribute("prList", hasItem(
-                        allOf(
-                                hasProperty("name", is("Shoping cart - Frontend")),
-                                hasProperty("description", is("Web Storage (website-frontend), lägga till produkter och varukorg."))
-                        )*/
                 )));
     }
 }
