@@ -32,6 +32,7 @@ public class HomeControllerTests {
         mockMvc = MockMvcBuilders.standaloneSetup(homeController).build();
     }
 
+
     @Test
     public void shouldReturnHomePage_whenGetRequestToRootUrl() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/"))
