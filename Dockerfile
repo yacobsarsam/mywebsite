@@ -1,8 +1,9 @@
-FROM gradle:jdk21 as builder
+FROM gradle:jdk21 AS builder
 
+WORKDIR /app
 COPY ./ ./
 
-RUN gradle build
+RUN gradle build --no-daemon
 
 RUN mv ./build/libs/MyWebsite-0.0.1-SNAPSHOT.jar /app.jar
 
