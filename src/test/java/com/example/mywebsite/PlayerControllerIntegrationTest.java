@@ -33,9 +33,9 @@ public class PlayerControllerIntegrationTest {
     @Test
     public void shouldReturnShowplayers_whenGetRequestPlayers() throws Exception {
         // Lägg till testdata om det behövs
-        Player player1 = new Player(1, "Player 1", "24");
-        Player player2 = new Player(2, "Player 2", "28");
-        playerImp.AddDataToDBIfNotSaved(List.of(player1, player2));
+       // Player player1 = new Player(1, "Player 1", "24");
+       // Player player2 = new Player(2, "Player 2", "28");
+        // playerImp.AddDataToDBIfNotSaved(List.of(player1, player2));
 
         mockMvc.perform(MockMvcRequestBuilders.get("/players"))
                 .andExpect(status().isOk())
