@@ -13,14 +13,15 @@ import java.util.List;
 
 @Controller
 public class PlayerController {
-   /* private final PlayerService playerService;
+   //private final PlayerService playerService;
+   PlayerDataSeeder playerDataSeeder = new PlayerDataSeeder();
 
-    public PlayerController(PlayerService playerService) {
-        this.playerService = playerService;
-    }
+    //public PlayerController(PlayerService playerService) {
+      //  this.playerService = playerService;
+    //}
 
     @GetMapping(path = "players")
-    String MinaProjekt(Model model) {
+    /*String MinaProjekt(Model model) {
         List<PlayerDto> allPlayersDto = playerService.getAllPlayersDto();
         for (PlayerDto playerDto : allPlayersDto) {
             System.out.println("MINA " + playerDto.getName());
@@ -29,9 +30,6 @@ public class PlayerController {
 
         return "showplayers";
     }*/
-   PlayerDataSeeder playerDataSeeder = new PlayerDataSeeder();
-
-    @GetMapping(path = "players")
     String MinaProjekt(Model model) {
         List<Player> allPlayersDto = playerDataSeeder.getPlayersAsList();
         for (Player player : allPlayersDto) {
@@ -41,5 +39,4 @@ public class PlayerController {
 
         return "showplayers";
     }
-
 }

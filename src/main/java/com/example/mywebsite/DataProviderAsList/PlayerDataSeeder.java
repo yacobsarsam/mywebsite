@@ -10,9 +10,9 @@ public class PlayerDataSeeder {
 
     @Bean
     public List<Player> getPlayersAsList() {
-        PlayerDto player1 = new PlayerDto("Player 1", "Forward");
-        PlayerDto player2 = new PlayerDto("Player 2", "Midfielder");
-        PlayerDto player3 = new PlayerDto("Player 3", "Defender");
+        Player player1 = new PlayerDto("Player 1", "Forward");
+        Player player2 = new PlayerDto("Player 2", "Midfielder");
+        Player player3 = new PlayerDto("Player 3", "Defender");
 
         return List.of(player1, player2, player3);
     }
