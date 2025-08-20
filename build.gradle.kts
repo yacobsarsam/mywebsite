@@ -15,12 +15,6 @@ java {
     }
 }
 
-configurations {
-    compileOnly {
-        extendsFrom(configurations.annotationProcessor.get())
-    }
-}
-
 repositories {
     mavenCentral()
 }
@@ -53,6 +47,7 @@ tasks.jar {
         )
     }
 }
+
 configurations {
     compileOnly {
         extendsFrom(configurations.annotationProcessor.get())
