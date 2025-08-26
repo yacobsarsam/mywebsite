@@ -6,11 +6,16 @@ WORKDIR /home/gradle/project
 COPY gradlew ./
 COPY gradle gradle
 COPY build.gradle* settings.gradle* ./
+
+# Download dependencies (ignores failures so Docker can cache this step)
 RUN chmod +x ./gradlew
 RUN ./gradlew dependencies --no-daemon || true
 
 # Copy the rest of the project
 COPY . .
+
+# Ensure wrapper stays executable (important after COPY . .)
+RUN chmod +x ./gradlew
 
 # Build the app with your wrapper (skip tests for faster build if desired)
 RUN ./gradlew build -x test --no-daemon
