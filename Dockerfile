@@ -5,7 +5,7 @@ WORKDIR /home/gradle/project
 # Copy wrapper + build scripts first (for better caching)
 COPY gradlew ./
 COPY gradle gradle
-COPY build.gradle ./
+COPY build.gradle* settings.gradle* ./
 RUN chmod +x ./gradlew
 RUN ./gradlew dependencies --no-daemon || true
 
