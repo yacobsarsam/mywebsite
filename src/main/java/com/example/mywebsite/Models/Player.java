@@ -19,6 +19,7 @@ public class Player {
     int id;
     String name;
     String old;
+
     public Player(String name, String old) {
         this.name = name;
         this.old = old;
