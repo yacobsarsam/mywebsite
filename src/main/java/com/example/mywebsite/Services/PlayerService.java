@@ -9,9 +9,9 @@ import java.util.List;
 
 @Service
 public interface PlayerService {
-    PlayerDto PlayerToPlayerDto(Player player);
+//    PlayerDto PlayerToPlayerDto(Player player);
 
-    void AddDataToDBIfNotSaved(List<Player> players);
+  //  void AddDataToDBIfNotSaved(List<Player> players);
 
-    List<PlayerDto> getAllPlayersDto();
+    //List<PlayerDto> getAllPlayersDto();
 }

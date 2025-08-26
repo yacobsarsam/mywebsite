@@ -15,14 +15,14 @@ import java.util.Objects;
 @Transactional
 @RequiredArgsConstructor
 public class PlayerImp implements PlayerService {
-    private final PlayerRepo playerRepo;
+    //private final PlayerRepo playerRepo;
 
-    @Override
+/*    @Override
     public PlayerDto PlayerToPlayerDto(Player p) {
         return PlayerDto.builder().id(p.getId()).name(p.getName()).old(p.getOld()).build();
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void AddDataToDBIfNotSaved(List<Player> players) {
         List<Player> playersInDatabase = playerRepo.findAll();
         for (Player p : players) {
@@ -31,10 +31,10 @@ public class PlayerImp implements PlayerService {
                 playerRepo.save(p);
             }
         }
-    }
+    }*/
 
-    @Override
+    /* @Override
     public List<PlayerDto> getAllPlayersDto() {
         return playerRepo.findAll().stream().map(this::PlayerToPlayerDto).toList();
-    }
+    }*/
 }
