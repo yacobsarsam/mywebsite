@@ -1,9 +1,9 @@
 package com.example.mywebsite.Controller;
 
-import com.example.mywebsite.DataProviderAsList.PlayerDataSeeder;
 import com.example.mywebsite.Dtos.PlayerDto;
 import com.example.mywebsite.Models.Player;
 import com.example.mywebsite.Services.PlayerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,15 +13,15 @@ import java.util.List;
 
 @Controller
 public class PlayerController {
-    //private final PlayerService playerService;
-    PlayerDataSeeder playerDataSeeder = new PlayerDataSeeder();
+    private final PlayerService playerService;
+    //PlayerDataSeeder playerDataSeeder = new PlayerDataSeeder();
 
-    //public PlayerController(PlayerService playerService) {
-    //  this.playerService = playerService;
-    //}
+    public PlayerController(PlayerService playerService) {
+      this.playerService = playerService;
+    }
 
     @GetMapping(path = "players")
-    /*String MinaProjekt(Model model) {
+    String MinaProjekt(Model model) {
         List<PlayerDto> allPlayersDto = playerService.getAllPlayersDto();
         for (PlayerDto playerDto : allPlayersDto) {
             System.out.println("MINA " + playerDto.getName());
@@ -29,8 +29,8 @@ public class PlayerController {
         model.addAttribute("playerlist", allPlayersDto);
 
         return "showplayers";
-    }*/
-    String MinaProjekt(Model model) {
+    }
+    /*String MinaProjekt(Model model) {
         List<Player> allPlayersDto = playerDataSeeder.getPlayersAsList();
         for (Player player : allPlayersDto) {
             System.out.println("MINA " + player.getName());
@@ -38,5 +38,5 @@ public class PlayerController {
         model.addAttribute("playerlist", allPlayersDto);
 
         return "showplayers";
-    }
+    }*/
 }

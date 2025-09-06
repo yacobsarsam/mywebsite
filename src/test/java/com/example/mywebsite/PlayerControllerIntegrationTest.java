@@ -42,12 +42,12 @@ public class PlayerControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("showplayers"))
                 .andExpect(model().attributeExists("playerlist"))
-                .andExpect(model().attribute("playerlist", hasSize(3)))
+                .andExpect(model().attribute("playerlist", hasSize(2)))
                 .andExpect(model().attribute("playerlist", hasItem(
                         allOf(
                                 hasProperty("id", is(1)),
                                 hasProperty("name", is("Player 1")),
-                                hasProperty("old", is("21"))
+                                hasProperty("old", is("24"))
                         )
                 )));
     }

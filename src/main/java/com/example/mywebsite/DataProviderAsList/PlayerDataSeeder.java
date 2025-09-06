@@ -1,4 +1,4 @@
-package com.example.mywebsite.DataProviderAsList;
+/*package com.example.mywebsite.DataProviderAsList;
 
 import com.example.mywebsite.Dtos.PlayerDto;
 import com.example.mywebsite.Models.Player;
@@ -16,4 +16,4 @@ public class PlayerDataSeeder {
 
         return List.of(player1, player2, player3);
     }
-}
+}*/

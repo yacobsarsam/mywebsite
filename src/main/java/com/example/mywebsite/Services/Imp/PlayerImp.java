@@ -38,4 +38,5 @@ public class PlayerImp implements PlayerService {
     public List<PlayerDto> getAllPlayersDto() {
         return playerRepo.findAll().stream().map(this::PlayerToPlayerDto).toList();
     }
+
 }
