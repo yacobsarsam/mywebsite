@@ -13,11 +13,11 @@ import java.util.List;
 
 @Controller
 public class PlayerController {
-   //private final PlayerService playerService;
-   PlayerDataSeeder playerDataSeeder = new PlayerDataSeeder();
+    //private final PlayerService playerService;
+    PlayerDataSeeder playerDataSeeder = new PlayerDataSeeder();
 
     //public PlayerController(PlayerService playerService) {
-      //  this.playerService = playerService;
+    //  this.playerService = playerService;
     //}
 
     @GetMapping(path = "players")

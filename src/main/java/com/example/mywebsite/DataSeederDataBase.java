@@ -20,7 +20,7 @@ public class DataSeederDataBase implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-//        pImp.AddDataToDBIfNotSaved(CreatePlayerData());
+        pImp.AddDataToDBIfNotSaved(CreatePlayerData());
 
     }
 
