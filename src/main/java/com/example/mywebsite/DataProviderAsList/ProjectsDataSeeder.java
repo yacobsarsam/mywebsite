@@ -17,7 +17,7 @@ public class ProjectsDataSeeder {
                 new URL("https://github.com/yacobsarsam/mywebsite"),
                 " Webbapplikation (denna webbsite/applikation) som jag byggt där DevOps metodik används, dvs CI/CD Pipeline, Docker, Tests, Databas och Deployment. " +
                         "Webapplikationen visar mitt CV, källkod och besrivning till några av mina " +
-                        "projekt i Github och visar några spelare som hämtas från postgress databas i Render");
+                        "projekt i Github och visar några spelare som hämtas från postgress databas i Neon");
         Project p2 = new Project("Shoping cart - Frontend",
                 new URL("https://yacobsarsam.github.io/Store/html/index.html"),
                 "Web Storage (website-frontend), lägga till produkter i varukorg samt varukorg.");
@@ -30,7 +30,13 @@ public class ProjectsDataSeeder {
                 "Kalender applikation. Swing använts som user interface. Möjlighet att viisa kalendern i olika" +
                         " vyn (månadsvy, veckovy och dagsvy. Dessutom kan man visa inlägg i form av påminnelser, dagbok " +
                         "och adressbok");
+        Project p0 = new Project("Webshopr applikation https://webshop-frontend-phi.vercel.app/",
+                new URL("https://github.com/yacobsarsam/webshop-backend , https://github.com/yacobsarsam/webshop-frontend"),
+                "Kalender applikation. Swing använts som user interface. Möjlighet att viisa kalendern i olika" +
+                        " vyn (månadsvy, veckovy och dagsvy. Dessutom kan man visa inlägg i form av påminnelser, dagbok " +
+                        "och adressbok");
 
-        return List.of(p1, p2, p3, p4);
+
+        return List.of(p0, p1, p2, p3, p4);
     }
 }
