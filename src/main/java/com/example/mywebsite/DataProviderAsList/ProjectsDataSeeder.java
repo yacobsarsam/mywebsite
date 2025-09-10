@@ -15,8 +15,8 @@ public class ProjectsDataSeeder {
     public List<Project> GetProjectsAsList() throws MalformedURLException {
         Project p1 = new Project("MyWebsite",
                 new URL("https://github.com/yacobsarsam/mywebsite"),
-                " Webbapplikation (denna webbsite/applikation) som jag byggt där DevOps metodik används, dvs CI/CD Pipeline, Docker, Tests, Databas och Deployment. " +
-                        "Webapplikationen visar mitt CV, källkod och besrivning till några av mina " +
+                " Webbapplikation (den här applikationen) som jag byggt har DevOps metodik används, dvs CI/CD Pipeline, Docker, Tests, Databas och Deployment. " +
+                        "Webapplikationen visar mitt CV (nedladdningsbar), källkod och besrivning till några av mina " +
                         "projekt i Github och visar några spelare som hämtas från postgress databas i Neon");
         Project p2 = new Project("Shoping cart - Frontend",
                 new URL("https://yacobsarsam.github.io/Store/html/index.html"),
