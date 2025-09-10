@@ -15,7 +15,7 @@ public class ProjectsDataSeeder {
     public List<Project> GetProjectsAsList() throws MalformedURLException {
        Project p0 = new Project("Webshop/webstore full-stack applikation",
                 new URL("https://webshop-frontend-phi.vercel.app/"),
-                                "This application has developed by me as a project to a fictive store. This version of the application represents a Minimal Viable Product (MVP), It includes the most important features that allow customers to browse products and manage shopping cart, it allows store staff to login and manage products, categories and users through a role-based admin interface. The application is designed to easily improve and expand it in the future. It consists of a frontend and a backend with a database, Development and version control have been handled via GitHub. DevOps methodology is used, i.e. CI/CD Pipeline, Docker, Tests, Database and Deployment.\n";
+                                "This application has developed by me as a project to a fictive store. This version of the application represents a Minimal Viable Product (MVP), It includes the most important features that allow customers to browse products and manage shopping cart, it allows store staff to login and manage products, categories and users through a role-based admin interface. The application is designed to easily improve and expand it in the future. It consists of a frontend and a backend with a database, Development and version control have been handled via GitHub. DevOps methodology is used, i.e. CI/CD Pipeline, Docker, Tests, Database and Deployment.\n"
 );
 
         Project p1 = new Project("MyWebsite",
